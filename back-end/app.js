@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 /////////////////////////////////////
 const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
+app.get("/can", async (req, res) => {
   try {
     const allDays = await db.any("SELECT * FROM test");
     res.json(allDays);
