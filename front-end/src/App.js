@@ -19,6 +19,7 @@ function App() {
   return (
     <div>
       <ul>
+        <p> It works</p>
         {days.map((day) => (
           <li key={day.name}>{day.name}</li>
         ))}
