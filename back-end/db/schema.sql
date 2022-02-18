@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS  adventure_shop_dev;
-CREATE DATABASE adventure_shop_dev;
-
-\c  adventure_shop_dev;
-
 DROP TABLE IF EXISTS adventures;
 
 CREATE TABLE adventures (
