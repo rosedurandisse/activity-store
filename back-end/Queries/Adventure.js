@@ -11,6 +11,30 @@ const getAllAdventures = async () => {
   }
 };
 
+getOneAdventure = async (id) => {
+  try {
+    oneAdventure = await db.one("SELECT * FROM adventures WHERE id=$1", id);
+    return oneAdventure;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+deleteOneAdventure = async (id) => {
+  try {
+    deletedAdventure = await db.one(
+      "DELETE FROM adventures WHERE id=$1 RETURNING *",
+      id
+    );
+    return deletedAdventure;
+  } catch (error) {
+    return error;
+  }
+};
+
 module.exports = {
   getAllAdventures,
+  getOneAdventure,
+  deleteOneAdventure,
 };
