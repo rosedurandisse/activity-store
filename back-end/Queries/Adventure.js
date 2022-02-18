@@ -6,7 +6,6 @@ const getAllAdventures = async () => {
     // console.log(allAdventures);
     return allAdventures;
   } catch (error) {
-    // console.log(`This is from the query page ${error}`);
     return error;
   }
 };
@@ -16,7 +15,6 @@ getOneAdventure = async (id) => {
     oneAdventure = await db.one("SELECT * FROM adventures WHERE id=$1", id);
     return oneAdventure;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -43,6 +41,20 @@ createAnAdventure = async (adventureObject) => {
     );
     return createdAdventure;
   } catch (error) {
+    return error;
+  }
+};
+
+updateAnAdventure = async (adventureObject, id) => {
+  const { name, description, price, rating, adrenaline_approved } =
+    adventureObject;
+  try {
+    updatedAdventure = await db.one(
+      "UPDATE adventures SET name=$1, description=$2, price=$3, rating=$4, adrenaline_approved=$5 WHERE id=$6 RETURNING *",
+      [name, description, price, rating, adrenaline_approved, id]
+    );
+    return updatedAdventure;
+  } catch (error) {
     console.log(error);
     return error;
   }
@@ -53,4 +65,5 @@ module.exports = {
   getOneAdventure,
   deleteOneAdventure,
   createAnAdventure,
+  updateAnAdventure,
 };
