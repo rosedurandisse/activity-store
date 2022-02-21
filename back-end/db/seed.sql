@@ -1,3 +1,4 @@
+
 INSERT INTO adventures (name, description, price, rating, adrenaline_approved) VALUES
 ('Bungee Jumping', 'Dive off the cliffs with a rubber band as your only savior', 200, 3, true),
 ('Skydiving', 'Jump out of a small plane to your assumed death with someone on your back', 150, 2, false),
