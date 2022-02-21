@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Adventure from "./Advenuture";
+import Adventure from "./Adventure";
 
 function Adventures() {
   const API = process.env.REACT_APP_API_URL;
