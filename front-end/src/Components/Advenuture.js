@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Adventure({ adventure }) {
-  console.log(adventure);
   return (
     <div>
-      <h1>{adventure.name}</h1>
+      <Link to={`/adventures/${adventure.id}`}>
+        <h1>{adventure.name}</h1>
+      </Link>
     </div>
   );
 }
