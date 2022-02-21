@@ -55,7 +55,6 @@ updateAnAdventure = async (adventureObject, id) => {
     );
     return updatedAdventure;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
