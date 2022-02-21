@@ -13,11 +13,9 @@ function Adventures() {
       .catch((error) => console.log(error));
   }, [API]);
 
-  console.log(adventures);
   return (
     <div>
       <section>
-        {" "}
         {adventures.map((adventure) => {
           return <Adventure key={adventure.id} adventure={adventure} />;
         })}

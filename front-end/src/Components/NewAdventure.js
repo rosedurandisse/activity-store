@@ -10,8 +10,8 @@ function NewAdventure() {
   const [adventure, setAdventure] = useState({
     name: "",
     description: "",
-    price: 0,
-    rating: 0,
+    price: "",
+    rating: "",
     adrenaline_approved: false,
   });
 
@@ -30,8 +30,6 @@ function NewAdventure() {
       adrenaline_approved: !adventure.adrenaline_approved,
     });
   };
-
-  console.log(adventure);
 
   const newAdventure = (addedAdventure) => {
     axios
@@ -93,7 +91,7 @@ function NewAdventure() {
         <label htmlFor="adrenaline_approved">Adrenaline Approved:</label>
         <input
           id="adrenaline_approved"
-          value={adventure.adrenaline_approved}
+          checked={adventure.adrenaline_approved}
           type="checkbox"
           onChange={handleCheckboxChange}
         />
