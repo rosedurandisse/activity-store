@@ -35,6 +35,7 @@ function EditAdventure() {
       ...adventure,
       adrenaline_approved: !adventure.adrenaline_approved,
     });
+    alert("I'm an alert");
   };
 
   const updatedAdventure = (adventure) => {
@@ -52,7 +53,7 @@ function EditAdventure() {
   };
 
   return (
-    <div>
+    <div className="Edit">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
