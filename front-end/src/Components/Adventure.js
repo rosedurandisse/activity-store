@@ -12,8 +12,8 @@ function Adventure(props) {
           alt={name}
         />
         <h1>{name}</h1>
-        <p>{rating}</p>
-        <p>{price}</p>
+        <p>{rating} Stars</p>
+        <p>${price}</p>
       </Link>
       <button onClick={() => handleAddToCart(props.adventure)}>
         Add to Cart
