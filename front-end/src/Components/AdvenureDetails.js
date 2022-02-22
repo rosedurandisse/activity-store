@@ -22,9 +22,17 @@ function AdventureDetails() {
       .catch((error) => console.log(error));
   };
 
+  console.log(adventure);
+
   return (
-    <div>
+    <div className="Adventures">
       <h1>{adventure.name}</h1>
+      <p>
+        <b>What you'll be doing:</b>
+        {adventure.description}
+      </p>
+      <p>Rating:{adventure.rating}</p>
+
       <Link to="/adventures">
         <button>Back</button>
       </Link>
