@@ -48,7 +48,6 @@ function App() {
   const clearItems = () => {
     setCartItems([]);
   };
-  console.log(cartItems);
   return (
     <div>
       <NavBar countCartItems={cartItems.length} />
