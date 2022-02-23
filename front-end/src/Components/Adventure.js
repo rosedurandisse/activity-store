@@ -1,11 +1,23 @@
 import { Link } from "react-router-dom";
 
-function Adventure({ adventure }) {
+function Adventure(props) {
+  const { name, rating, price, id } = props.adventure;
+  const handleAddToCart = props.handleAddToCart;
+
   return (
-    <div>
-      <Link to={`/adventures/${adventure.id}`}>
-        <h1>{adventure.name}</h1>
+    <div className="Adventure">
+      <Link to={`/adventures/${id}`}>
+        <img
+          src="https://media.istockphoto.com/photos/bungee-jumping-picture-id547436912?s=612x612"
+          alt={name}
+        />
+        <h1>{name}</h1>
+        <p>{rating} Stars</p>
+        <p>${price}</p>
       </Link>
+      <button onClick={() => handleAddToCart(props.adventure)}>
+        Add to Cart
+      </button>
     </div>
   );
 }
