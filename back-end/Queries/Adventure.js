@@ -2,7 +2,7 @@ const db = require("../db/dbConfig");
 
 const getAllAdventures = async () => {
   try {
-    allAdventures = await db.any("SELECT * FROM adventures");
+    let allAdventures = await db.any("SELECT * FROM adventures");
     // console.log(allAdventures);
     return allAdventures;
   } catch (error) {
@@ -12,7 +12,7 @@ const getAllAdventures = async () => {
 
 getOneAdventure = async (id) => {
   try {
-    oneAdventure = await db.one("SELECT * FROM adventures WHERE id=$1", id);
+    let oneAdventure = await db.one("SELECT * FROM adventures WHERE id=$1", id);
     return oneAdventure;
   } catch (error) {
     return error;
@@ -21,7 +21,7 @@ getOneAdventure = async (id) => {
 
 deleteOneAdventure = async (id) => {
   try {
-    deletedAdventure = await db.one(
+    let deletedAdventure = await db.one(
       "DELETE FROM adventures WHERE id=$1 RETURNING *",
       id
     );
@@ -32,12 +32,12 @@ deleteOneAdventure = async (id) => {
 };
 
 createAnAdventure = async (adventureObject) => {
-  const { name, description, price, rating, adrenaline_approved } =
+  const { name, description, price, rating, adrenaline_approved, image } =
     adventureObject;
   try {
-    createdAdventure = await db.one(
-      "INSERT INTO adventures (name, description, price, rating, adrenaline_approved) VALUES ($1, $2,$3,$4,$5) RETURNING *",
-      [name, description, price, rating, adrenaline_approved]
+    let createdAdventure = await db.one(
+      "INSERT INTO adventures (name, description, price, rating, adrenaline_approved,image) VALUES ($1, $2,$3,$4,$5,$6) RETURNING *",
+      [name, description, price, rating, adrenaline_approved, image]
     );
     return createdAdventure;
   } catch (error) {
@@ -46,12 +46,12 @@ createAnAdventure = async (adventureObject) => {
 };
 
 updateAnAdventure = async (adventureObject, id) => {
-  const { name, description, price, rating, adrenaline_approved } =
+  const { name, description, price, rating, adrenaline_approved, image } =
     adventureObject;
   try {
-    updatedAdventure = await db.one(
-      "UPDATE adventures SET name=$1, description=$2, price=$3, rating=$4, adrenaline_approved=$5 WHERE id=$6 RETURNING *",
-      [name, description, price, rating, adrenaline_approved, id]
+    let updatedAdventure = await db.one(
+      "UPDATE adventures SET name=$1, description=$2, price=$3, rating=$4, adrenaline_approved=$5, image=$6 WHERE id=$7 RETURNING *",
+      [name, description, price, rating, adrenaline_approved, image, id]
     );
     return updatedAdventure;
   } catch (error) {

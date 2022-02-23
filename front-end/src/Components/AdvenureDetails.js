@@ -22,17 +22,20 @@ function AdventureDetails() {
       .catch((error) => console.log(error));
   };
 
-  console.log(adventure);
-
   return (
     <div className="Adventures">
       <h1>{adventure.name}</h1>
+      <div>
+        <img src={adventure.image} alt={adventure.name} />
+      </div>
       <p>
-        <b>What you'll be doing:</b>
+        <b>What you'll be doing: </b>
         {adventure.description}
       </p>
-      <p>Rating:{adventure.rating}</p>
-
+      <p>
+        {" "}
+        <b>Rating:</b> {adventure.rating}
+      </p>
       <Link to="/adventures">
         <button>Back</button>
       </Link>
