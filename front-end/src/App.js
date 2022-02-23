@@ -44,6 +44,10 @@ function App() {
       );
     }
   };
+
+  const clearItems = () => {
+    setCartItems([]);
+  };
   console.log(cartItems);
   return (
     <div>
@@ -67,6 +71,7 @@ function App() {
                 cartItems={cartItems}
                 handleAddToCart={handleAddToCart}
                 handleRemove={handleRemove}
+                clearItems={clearItems}
               />
             }
           ></Route>

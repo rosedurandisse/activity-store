@@ -1,7 +1,7 @@
 import React from "react";
 
 function Basket(props) {
-  const { cartItems, handleAddToCart, handleRemove } = props;
+  const { cartItems, handleAddToCart, handleRemove, clearItems } = props;
   const PriceOfEachAdventure = (quantity, price) => {
     return quantity * price;
   };
@@ -52,9 +52,14 @@ function Basket(props) {
               })}
             </tbody>
           </table>
-          <div>Subtotal:${itemsPrice}</div>
-          <div>Taxes:${taxes.toFixed(2)}</div>
-          <div>Total:${total.toFixed(2)}</div>
+          <div>
+            <div>Subtotal:${itemsPrice}</div>
+            <div>Taxes:${taxes.toFixed(2)}</div>
+            <div>Total:${total.toFixed(2)}</div>
+          </div>
+          <button onClick={() => clearItems()}>
+            Forget it. I can venture to bed. It's included with the rent
+          </button>
         </section>
       )}
     </section>
