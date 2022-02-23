@@ -60,6 +60,9 @@ function Basket(props) {
           <button onClick={() => clearItems()}>
             Forget it. I can venture to bed. It's included with the rent
           </button>
+          <button onClick={() => alert("You got money!")}>
+            Complete Purchase
+          </button>
         </section>
       )}
     </section>
