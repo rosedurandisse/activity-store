@@ -9,9 +9,10 @@ function EditAdventure() {
   const [adventure, setAdventure] = useState({
     name: "",
     description: "",
-    price: 0,
+    price: "",
     rating: 0,
     adrenaline_approved: true,
+    image: "",
   });
 
   useEffect(() => {
@@ -22,12 +23,7 @@ function EditAdventure() {
   }, [API, id]);
 
   const handleTextChange = (event) => {
-    event.target.id === "name" || "description"
-      ? setAdventure({ ...adventure, [event.target.id]: event.target.value })
-      : setAdventure({
-          ...adventure,
-          [event.target.id]: Number(event.target.value),
-        });
+    setAdventure({ ...adventure, [event.target.id]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
@@ -35,7 +31,6 @@ function EditAdventure() {
       ...adventure,
       adrenaline_approved: !adventure.adrenaline_approved,
     });
-    alert("I'm an alert");
   };
 
   const updatedAdventure = (adventure) => {
@@ -75,6 +70,17 @@ function EditAdventure() {
           required
         />
 
+        <label htmlFor="image">Image:</label>
+        <input
+          name="image"
+          id="image"
+          value={adventure.image}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Image of Adventure"
+          required
+        />
+
         <label htmlFor="price">Price:</label>
         <input
           id="price"
@@ -86,14 +92,19 @@ function EditAdventure() {
         />
 
         <label htmlFor="rating">Rating:</label>
-        <input
+        <select
+          name="rating"
           id="rating"
           value={adventure.rating}
-          type="number"
           onChange={handleTextChange}
-          placeholder="Rating of Adventure"
           required
-        />
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
 
         <label htmlFor="adrenaline_approved">Adrenaline Approved:</label>
         <input
@@ -105,7 +116,7 @@ function EditAdventure() {
         <br />
         <input type="submit" />
       </form>
-      <Link to={`/snacks/${id}`}>
+      <Link to={`/adventures/${id}`}>
         <button>Nevermind!</button>
       </Link>
     </div>

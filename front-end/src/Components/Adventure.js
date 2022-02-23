@@ -10,7 +10,7 @@ function Adventure(props) {
         <img src={image} alt={name} />
         <h1>{name}</h1>
         <p>{rating} Stars</p>
-        <p>${price}</p>
+        <p>${Number(price)}</p>
       </Link>
       <button onClick={() => handleAddToCart(props.adventure)}>
         Add to Cart

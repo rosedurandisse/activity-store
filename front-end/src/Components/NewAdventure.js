@@ -13,15 +13,11 @@ function NewAdventure() {
     price: "",
     rating: "",
     adrenaline_approved: false,
+    image: "",
   });
 
   const handleTextChange = (event) => {
-    event.target.id === "name" || "description"
-      ? setAdventure({ ...adventure, [event.target.id]: event.target.value })
-      : setAdventure({
-          ...adventure,
-          [event.target.id]: Number(event.target.value),
-        });
+    setAdventure({ ...adventure, [event.target.id]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
@@ -68,6 +64,16 @@ function NewAdventure() {
           required
         />
 
+        <label htmlFor="image">Image:</label>
+        <input
+          id="image"
+          value={adventure.image}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Image of Adventure"
+          required
+        />
+
         <label htmlFor="price">Price:</label>
         <input
           id="price"
@@ -79,14 +85,22 @@ function NewAdventure() {
         />
 
         <label htmlFor="rating">Rating:</label>
-        <input
+        <select
+          name="rating"
           id="rating"
           value={adventure.rating}
-          type="number"
           onChange={handleTextChange}
-          placeholder="Rating of Adventure"
           required
-        />
+        >
+          <option value="" selected disabled hidden>
+            Select A Rating
+          </option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
 
         <label htmlFor="adrenaline_approved">Adrenaline Approved:</label>
         <input
@@ -98,7 +112,7 @@ function NewAdventure() {
         <br />
         <input type="submit" />
       </form>
-      <Link to={`/snacks/${id}`}>
+      <Link to={`/adventures/${id}`}>
         <button>Nevermind!</button>
       </Link>
     </div>
