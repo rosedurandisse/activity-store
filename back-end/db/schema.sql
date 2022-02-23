@@ -7,7 +7,8 @@ CREATE TABLE adventures (
     price INT,
     rating INT,
     CHECK (rating >= 0 AND rating <= 5),
-    adrenaline_approved BOOLEAN
+    adrenaline_approved BOOLEAN,
+    image TEXT
 );
 
 
