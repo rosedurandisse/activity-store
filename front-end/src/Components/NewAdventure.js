@@ -85,14 +85,27 @@ function NewAdventure() {
         />
 
         <label htmlFor="rating">Rating:</label>
+        <input
+          id="rating"
+          value={adventure.rating}
+          type="number"
+          min="1"
+          max="5"
+          onChange={handleTextChange}
+          placeholder="Rating of Adventure"
+          required
+        />
+
+        {/* <label htmlFor="rating">Rating:</label>
         <select
+          defaultValue=""
           name="rating"
           id="rating"
           value={adventure.rating}
           onChange={handleTextChange}
           required
         >
-          <option value="" selected disabled hidden>
+          <option value="" disabled>
             Select A Rating
           </option>
           <option value="1">1</option>
@@ -100,7 +113,7 @@ function NewAdventure() {
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-        </select>
+        </select> */}
 
         <label htmlFor="adrenaline_approved">Adrenaline Approved:</label>
         <input
