@@ -49,7 +49,7 @@ function App() {
     setCartItems([]);
   };
   return (
-    <div>
+    <div className="app">
       <NavBar countCartItems={cartItems.length} />
       <div>
         <Routes>

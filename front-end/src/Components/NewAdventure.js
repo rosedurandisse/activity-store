@@ -41,6 +41,7 @@ function NewAdventure() {
     newAdventure(adventure);
   };
 
+  console.log(adventure);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -71,7 +72,6 @@ function NewAdventure() {
           type="text"
           onChange={handleTextChange}
           placeholder="Image of Adventure"
-          required
         />
 
         <label htmlFor="price">Price:</label>
@@ -83,7 +83,7 @@ function NewAdventure() {
           placeholder="Price of Adventure"
           required
         />
-
+        {/* 
         <label htmlFor="rating">Rating:</label>
         <input
           id="rating"
@@ -94,11 +94,10 @@ function NewAdventure() {
           onChange={handleTextChange}
           placeholder="Rating of Adventure"
           required
-        />
+        /> */}
 
-        {/* <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating">Rating:</label>
         <select
-          defaultValue=""
           name="rating"
           id="rating"
           value={adventure.rating}
@@ -113,7 +112,7 @@ function NewAdventure() {
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-        </select> */}
+        </select>
 
         <label htmlFor="adrenaline_approved">Adrenaline Approved:</label>
         <input

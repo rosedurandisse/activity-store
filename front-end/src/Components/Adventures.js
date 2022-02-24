@@ -13,7 +13,7 @@ function Adventures(props) {
       .then((response) => setAdventures(response.data))
       .catch((error) => console.log(error));
   }, [API]);
-
+  console.log(adventures);
   return (
     <div>
       <section className="Adventures col-2">

@@ -12,7 +12,7 @@ function EditAdventure() {
     price: "",
     rating: 0,
     adrenaline_approved: true,
-    image: "",
+    image: null,
   });
 
   useEffect(() => {
@@ -93,7 +93,6 @@ function EditAdventure() {
 
         <label htmlFor="rating">Rating:</label>
         <select
-          defaultValue=""
           name="rating"
           id="rating"
           value={adventure.rating}
@@ -101,7 +100,7 @@ function EditAdventure() {
           required
         >
           <option value="" disabled>
-            Select a Rating
+            Select A Rating
           </option>
           <option value="1">1</option>
           <option value="2">2</option>

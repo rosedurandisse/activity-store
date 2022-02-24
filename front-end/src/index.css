@@ -1,6 +1,12 @@
 /* body {
   font-family: Overlock, cursive;
 } */
+
+.app {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
 nav {
   background-color: #230f33;
   display: flex;
@@ -77,6 +83,24 @@ input[type="number"] {
 input[type="checkbox"]:focus {
   outline: max(2px, 0.15em) solid currentColor;
   outline-offset: max(2px, 0.15em);
+}
+
+input[type="submit"] {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: purple;
+  text-align: center;
+}
+input[type="submit"]:hover {
+  color: #000000;
+  background-color: #ffffff;
 }
 
 button {
