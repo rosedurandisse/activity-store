@@ -41,7 +41,6 @@ function NewAdventure() {
     newAdventure(adventure);
   };
 
-  console.log(adventure);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -72,6 +71,7 @@ function NewAdventure() {
           type="text"
           onChange={handleTextChange}
           placeholder="Image of Adventure"
+          required
         />
 
         <label htmlFor="price">Price:</label>

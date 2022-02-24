@@ -12,7 +12,7 @@ function EditAdventure() {
     price: "",
     rating: 0,
     adrenaline_approved: true,
-    image: null,
+    image: "",
   });
 
   useEffect(() => {
