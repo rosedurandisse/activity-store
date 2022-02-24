@@ -39,6 +39,10 @@ createAnAdventure = async (adventureObject) => {
       "INSERT INTO adventures (name, description, price, rating, adrenaline_approved,image) VALUES ($1, $2,$3,$4,$5,$6) RETURNING *",
       [name, description, price, rating, adrenaline_approved, image]
     );
+    if (!createdAdventure.image) {
+      createdAdventure.image =
+        "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+    }
     return createdAdventure;
   } catch (error) {
     return error;
