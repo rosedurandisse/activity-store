@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Adventure from "./Adventure";
+import SearchBar from "./searchBar/searchBar";
 
 function Adventures(props) {
   const { handleAddToCart } = props.props;
   const API = process.env.REACT_APP_API_URL;
   const [adventures, setAdventures] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -13,20 +15,30 @@ function Adventures(props) {
       .then((response) => setAdventures(response.data))
       .catch((error) => console.log(error));
   }, [API]);
+
+  let filteredAdventures = adventures;
+
+  if (searchTerm) {
+    filteredAdventures = adventures.filter((adventure) => {
+      const adventureLowerCased = adventure.name.toLowerCase();
+      const searchTermLowerCased = searchTerm.toLowerCase();
+      return adventureLowerCased.includes(searchTermLowerCased);
+    });
+  }
+
   return (
     <div>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <section className="Adventures col-2">
-        <article>
-          {adventures.map((adventure) => {
-            return (
-              <Adventure
-                key={adventure.id}
-                adventure={adventure}
-                handleAddToCart={handleAddToCart}
-              />
-            );
-          })}
-        </article>
+        {filteredAdventures.map((adventure) => {
+          return (
+            <Adventure
+              key={adventure.id}
+              adventure={adventure}
+              handleAddToCart={handleAddToCart}
+            />
+          );
+        })}
       </section>
     </div>
   );
