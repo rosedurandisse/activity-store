@@ -1,7 +1,7 @@
 import React from "react";
 
-function Basket(props) {
-  const { cartItems, handleAddToCart, handleRemove, clearItems } = props;
+function Basket({ cartItems, handleAddToCart, handleRemove, clearItems }) {
+  // const { cartItems, handleAddToCart, handleRemove, clearItems } = props;
   const PriceOfEachAdventure = (quantity, price) => {
     return quantity * price;
   };

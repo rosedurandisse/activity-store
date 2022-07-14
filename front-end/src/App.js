@@ -7,7 +7,7 @@ import Edit from "./Pages/Edit";
 import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
-import Basket from "./Components/basket/Basket";
+import Cart from "./Pages/Cart";
 
 //Nav Components
 import NavBar from "./Components/navBar/Navbar";
@@ -77,7 +77,7 @@ function App() {
           <Route
             path="/cart"
             element={
-              <Basket
+              <Cart
                 cartItems={cartItems}
                 handleAddToCart={handleAddToCart}
                 handleRemove={handleRemove}
