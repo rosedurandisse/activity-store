@@ -1,4 +1,4 @@
-import EditAdventure from "../Components/EditAdventure";
+import EditAdventure from "../Components/adventureEdit/EditAdventure";
 
 function Edit() {
   return <div>{<EditAdventure />}</div>;

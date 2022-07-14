@@ -1,4 +1,4 @@
-import AdventureDetails from "../Components/AdvenureDetails";
+import AdventureDetails from "../Components/adventureDetails/AdvenureDetails";
 
 function Show() {
   return <div>{<AdventureDetails />}</div>;

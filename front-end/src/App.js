@@ -7,10 +7,10 @@ import Edit from "./Pages/Edit";
 import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
-import Basket from "./Components/Basket";
+import Basket from "./Components/basket/Basket";
 
 //Nav Components
-import NavBar from "./Components/Navbar";
+import NavBar from "./Components/navBar/Navbar";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);

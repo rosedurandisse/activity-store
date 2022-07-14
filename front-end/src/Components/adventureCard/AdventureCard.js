@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Adventure(props) {
+function AdventureCard(props) {
   const { name, rating, price, id, image } = props.adventure;
   const handleAddToCart = props.handleAddToCart;
 
@@ -19,4 +19,4 @@ function Adventure(props) {
   );
 }
 
-export default Adventure;
+export default AdventureCard;

@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Adventure from "./Adventure";
-import SearchBar from "./searchBar/searchBar";
+import Adventure from "../adventureCard/AdventureCard";
+import SearchBar from "../searchBar/searchBar";
 
-function Adventures(props) {
+function AdventureList(props) {
   const { handleAddToCart } = props.props;
   const API = process.env.REACT_APP_API_URL;
   const [adventures, setAdventures] = useState([]);
@@ -43,4 +43,4 @@ function Adventures(props) {
     </div>
   );
 }
-export default Adventures;
+export default AdventureList;

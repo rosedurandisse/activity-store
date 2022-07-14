@@ -1,10 +1,10 @@
-import Adventures from "../Components/Adventures";
+import AdventureList from "../Components/adventureList/AdventureList";
 
 function Index(props) {
   return (
     <div>
       <h2>All Possible Adventures</h2>
-      {<Adventures props={props} />}{" "}
+      {<AdventureList props={props} />}{" "}
     </div>
   );
 }
