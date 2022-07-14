@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import "./App.scss";
 
 //Pages
 import Home from "./Pages/Home";
@@ -33,7 +34,6 @@ function App() {
 
   const handleRemove = (product) => {
     const itemExistsInCart = cartItems.find((item) => item.id === product.id);
-
     if (itemExistsInCart.quantity === 1) {
       setCartItems(cartItems.filter((eachItem) => eachItem.id !== product.id));
     } else {
@@ -58,6 +58,7 @@ function App() {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
+
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>

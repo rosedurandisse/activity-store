@@ -1,13 +1,13 @@
 import React from "react";
+import "./searchBar.scss";
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
-  console.log(searchTerm);
   const updateSearchTerm = (event) => {
     setSearchTerm(event.target.value);
   };
 
   return (
-    <div>
+    <div className="SearchBar__input">
       <input
         className="searchBar"
         placeholder="Search an activity"
