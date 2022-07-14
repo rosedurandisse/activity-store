@@ -1,13 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Adventure from "../adventureCard/AdventureCard";
-import SearchBar from "../searchBar/searchBar";
 
 function AdventureList(props) {
-  const { handleAddToCart } = props.props;
+  const { handleAddToCart, searchTerm } = props.props;
   const API = process.env.REACT_APP_API_URL;
   const [adventures, setAdventures] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -28,7 +26,6 @@ function AdventureList(props) {
 
   return (
     <div>
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <section className="Adventures col-2">
         {filteredAdventures.map((adventure) => {
           return (

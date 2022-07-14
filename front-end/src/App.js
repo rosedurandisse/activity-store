@@ -14,6 +14,8 @@ import NavBar from "./Components/navBar/Navbar";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const handleAddToCart = (product) => {
     const itemExistsInCart = cartItems.find((item) => item.id === product.id);
     if (itemExistsInCart) {
@@ -48,16 +50,25 @@ function App() {
   const clearItems = () => {
     setCartItems([]);
   };
+
   return (
     <div className="app">
-      <NavBar countCartItems={cartItems.length} />
+      <NavBar
+        countCartItems={cartItems.length}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route
             path="/adventures"
             element={
-              <Index cartItems={cartItems} handleAddToCart={handleAddToCart} />
+              <Index
+                cartItems={cartItems}
+                handleAddToCart={handleAddToCart}
+                searchTerm={searchTerm}
+              />
             }
           ></Route>
           <Route path="/adventures/:id" element={<Show />}></Route>

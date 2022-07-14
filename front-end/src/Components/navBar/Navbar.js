@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import SearchBar from "../searchBar/searchBar";
 
 function NavBar(props) {
-  const { countCartItems } = props;
+  const { countCartItems, searchTerm, setSearchTerm } = props;
   return (
     <nav>
       <div>
@@ -20,6 +21,9 @@ function NavBar(props) {
             </p>
           ) : null}
         </Link>
+      </div>
+      <div>
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
     </nav>
   );

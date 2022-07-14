@@ -1,6 +1,7 @@
 import React from "react";
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
+  console.log(searchTerm);
   const updateSearchTerm = (event) => {
     setSearchTerm(event.target.value);
   };
